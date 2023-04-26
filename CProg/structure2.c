@@ -41,11 +41,9 @@ int main()
 	struct employee e[10];
 	int it;
 
-	for(it=0;it<5;it++)
-	{
-		getDetails(&e[it]);
-	}
-	
+	getDetails(e);
+
+		
 	for(it=0;it<5;it++)
 	{
 		dispDetails(e[it]);
@@ -60,13 +58,17 @@ int main()
 
 void getDetails(EMP *e)
 {
+	int it;
+
 	printf("\nEnter the Details of employee\n");
-	printf("\nName: ");
-	scanf("%s",e->e_name);
-	printf("\nID: ");
-	scanf("%d",&e->e_id);
-	printf("\nSalary: ");
-	scanf("%f",&e->e_sal);
+	for(it=0;it<5;it++){
+		printf("\nName: ");
+		scanf("%s",e[it].e_name);
+		printf("\nID: ");
+		scanf("%d",&e[it].e_id);
+		printf("\nSalary: ");
+		scanf("%f",&e[it].e_sal);
+	}
 }
 
 void dispDetails(EMP e)
